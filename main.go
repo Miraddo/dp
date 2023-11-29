@@ -88,7 +88,7 @@ func (udp *UserDataProcessor) ProcessRequest(rw http.ResponseWriter, req *http.R
 
 	udp.mu.Unlock()
 
-	// Process the data (simply print it here)
+	// Process the data (simply print) or we can sent it to a queue (SQS, Kafka, RabitMQ,...)
 	fmt.Println("Data processed:")
 	fmt.Println("ID:", data.ID)
 	fmt.Println("UserID:", data.UserID)
